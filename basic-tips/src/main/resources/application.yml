@@ -1,0 +1,6 @@
+
+management:
+  endpoints.web.exposure.include: '*'
+  endpoint:
+    health:
+      show-detials: always
