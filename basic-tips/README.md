@@ -45,9 +45,12 @@ So instead of using localhost:8080, 192.168.1.12:8080 is used where 192.168.2.8 
         </dependency>
             
     http://localhost:8080/v3/api-docs
-    http://localhost:8080/swagger-ui.html
+    http://localhost:8080/swagger-ui.htm"l"
 
 ## Centralize logs
+ELK stack:
+
+Checkout: https://github.com/haodeng/microservice-centralize-log-elk-demo
 
 ## Build and publish images
 
@@ -97,3 +100,6 @@ Checkout info:
     }
                 
 ## Test
+Use TestRestTemplate
+
+    mvn clean install spring-boot:run
