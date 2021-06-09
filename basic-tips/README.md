@@ -33,6 +33,20 @@ So instead of using localhost:8080, 192.168.1.12:8080 is used where 192.168.2.8 
 
 ## API doc
 
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-webmvc-core</artifactId>
+            <version>1.5.9</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.9</version>
+        </dependency>
+            
+    http://localhost:8080/v3/api-docs
+    http://localhost:8080/swagger-ui.html
+
 ## Centralize logs
 
 ## Build and publish images
