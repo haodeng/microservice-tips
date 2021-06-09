@@ -7,3 +7,7 @@
 * Build and publish images
 * Include git commit id
 * Test
+
+# Config and service discovery
+* Config Server
+* Config Client
