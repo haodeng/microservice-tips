@@ -1,4 +1,5 @@
 # A bit everything for SpringBoot Microservice
+For springboot and spring cloud version compatibility check: https://spring.io/projects/spring-cloud
 
 ## Basic tips
 * Collect and monitor metrics
@@ -11,3 +12,4 @@
 # Config and service discovery
 * Config Server
 * Config Client
+* Discovery Server

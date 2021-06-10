@@ -1,0 +1,4 @@
+# customize properties for service-a
+
+property1: 'property1 customized for service-a from config server'
+property2: 'property2 customized for service-a from config server'

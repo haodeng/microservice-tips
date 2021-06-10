@@ -1,0 +1,15 @@
+server.port: 0
+
+# local properties, will be overwritten by config server: config-repo/service-a.yml
+property1: 'local service-a property1'
+property2: 'local service-a property2'
+
+spring:
+  application:
+    name: service-a
+  config:
+    import: optional:configserver:http://localhost:8080
+
+eureka:
+  instance:
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}}
