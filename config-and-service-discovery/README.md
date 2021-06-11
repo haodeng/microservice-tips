@@ -95,6 +95,7 @@ The value should be taken from config server config-repo/application.yml
 
 
 ## Discovery Server
+### Via Eureka
 In service-a and service-b, enable eureka-client
 
     <dependency>
@@ -120,3 +121,35 @@ In discovery-server
 * Allow paralle run of service-a and service-b
 * run service-a and service-b multiple instances
 * check localhost:8761
+
+### Via Consul
+
+    docker run -d --name consul -p 8500:8500 consul
+    
+    docker logs -f consul
+
+Check Consul UI: http://localhost:8500/
+
+In service-c, add:
+
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+    </dependency>
+
+Consul already has config server feature, to activate config:
+
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-consul-config</artifactId>
+    </dependency>
+    
+    add key-value config/service-c/data:
+    property1: consul pop1
+    property2: consul pop2
+           
+Restart service-c, check consul config works:  
+
+    curl -s http://localhost:52559/service-c/property1
+should return "consul pop1"
+

@@ -7,8 +7,17 @@ property2: 'local service-b property2'
 spring:
   application:
     name: service-b
-  config:
-    import: optional:configserver:http://localhost:8080
+#  config:
+#    import: optional:configserver:http://localhost:8080
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+#      config:
+#        format: YAML
+#      discovery:
+#        registerHealthCheck: false
+#        instanceId: "${spring.cloud.client.hostname}:${spring.application.name}:${random.value}"
 
 eureka:
   instance:

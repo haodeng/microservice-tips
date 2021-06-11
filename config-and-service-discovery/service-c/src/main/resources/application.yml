@@ -1,0 +1,24 @@
+server.port: 0
+
+# local properties, will be overwritten by consul server: config/service-c/data
+property1: 'local service-c property1'
+property2: 'local service-c property2'
+
+spring:
+  application:
+    name: service-c
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: true
+        format: YAML
+        prefix: config
+        data-key: data
+      discovery:
+        registerHealthCheck: false
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+  # for consul
+  config:
+    import: optional:consul:${spring.cloud.consul.host}:${spring.cloud.consul.port}

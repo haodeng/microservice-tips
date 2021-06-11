@@ -15,6 +15,7 @@
         <module>service-a</module>
         <module>service-b</module>
         <module>discovery-server</module>
+        <module>service-c</module>
     </modules>
 
     <properties>
