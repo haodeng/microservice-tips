@@ -4,20 +4,14 @@ server.port: 0
 property1: 'local service-b property1'
 property2: 'local service-b property2'
 
+# will be overwritten by vault server key/value config
+secret1: 'local service-b secret1'
+
 spring:
   application:
     name: service-b
-#  config:
-#    import: optional:configserver:http://localhost:8080
-  cloud:
-    consul:
-      host: 127.0.0.1
-      port: 8500
-#      config:
-#        format: YAML
-#      discovery:
-#        registerHealthCheck: false
-#        instanceId: "${spring.cloud.client.hostname}:${spring.application.name}:${random.value}"
+  config:
+    import: optional:configserver:http://localhost:8080
 
 eureka:
   instance:

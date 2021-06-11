@@ -93,6 +93,37 @@ curl -s http://localhost:62149//service-b/property1
     Generic property1 from config
 The value should be taken from config server config-repo/application.yml
 
+## vault as secret config server
+Vault secure, store and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets and other sensitive data using a UI, CLI, or HTTP API.
+
+    docker run -d --name vault --cap-add=IPC_LOCK -e 'VAULT_DEV_ROOT_TOKEN_ID=hao' -p 8200:8200 vault
+
+Login: http://localhost:8200/, TOKEN, hao
+
+Enable secret version 1, which allows static key/val, add path service-b, key/val: secret1/val1
+
+Add vault config to config-server application.yml:
+
+    spring:
+      application:
+        name: config-server
+      profiles:
+        active: native, vault #Enable for Vault backend
+      cloud:
+        config:
+          server:
+            native:
+              searchLocations: classpath:/config-repo
+            vault:
+              host: 127.0.0.1
+              authentication: TOKEN
+              token: hao # should pass via jvm option later
+
+Restart config-server, service-b
+
+Check: curl -s http://localhost:59293/service-b/secret1
+should return: val1
+
 
 ## Discovery Server
 ### Via Eureka

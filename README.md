@@ -11,5 +11,7 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 
 # Config and service discovery
 * Config Server
+* Vault protect sensitive config
 * Config Client
 * Discovery Server
+* Alternatively use Consul as config server and discover server

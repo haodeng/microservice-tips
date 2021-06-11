@@ -4,9 +4,13 @@ spring:
   application:
     name: config-server
   profiles:
-    active: native #,vault #Enable for Vault backend
+    active: native, vault #Enable for Vault backend
   cloud:
     config:
       server:
         native:
           searchLocations: classpath:/config-repo
+        vault:
+          host: 127.0.0.1
+          authentication: TOKEN
+          token: hao # should pass in via jvm option -Dspring.cloud.config.vault.token=hao

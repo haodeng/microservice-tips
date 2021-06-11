@@ -15,6 +15,9 @@ public class ServiceBController {
     @Value("${property2}")
     String property2;
 
+    @Value("${secret1}")
+    String secret1;
+
     @GetMapping("/property1")
     public String getProperty1() {
         return property1;
@@ -23,5 +26,10 @@ public class ServiceBController {
     @GetMapping("/property2")
     public String getProperty2() {
         return property2;
+    }
+
+    @GetMapping("/secret1")
+    public String getSecret1() {
+        return secret1;
     }
 }
