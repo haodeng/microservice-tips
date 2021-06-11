@@ -9,7 +9,7 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 * Include git commit id
 * Test
 
-# Config and service discovery
+## Config and service discovery
 * Config Server
 * Vault protect sensitive config
 * Config Client
