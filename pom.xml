@@ -23,6 +23,7 @@
 	<modules>
 		<module>basic-tips</module>
 		<module>config-and-service-discovery</module>
-	</modules>
+        <module>communication-related</module>
+    </modules>
 
 </project>

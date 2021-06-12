@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: client-resttemplcate-service
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 1
