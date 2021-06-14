@@ -14,6 +14,7 @@
     <modules>
         <module>client-resttemplate-service</module>
         <module>post-service</module>
+        <module>client-feign-service</module>
     </modules>
 
     <properties>

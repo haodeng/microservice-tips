@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: client-feign-service
+
+feign:
+  client:
+    config:
+      post-service:
+        readTimeout: 1000
+        connectTimeout: 1000
+        loggerLevel: full
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 1
+
+management:
+  endpoints.web.exposure.include: '*'
+  endpoint:
+    health:
+      show-details: always
