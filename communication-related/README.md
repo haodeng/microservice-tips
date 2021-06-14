@@ -12,6 +12,13 @@ try:
 
 ### Reactive WebClient
 
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-webflux</artifactId>
+    </dependency>
+    
+    use reactive WebClient
+
 ### OpenFeign
 enable feign client
 

@@ -15,3 +15,12 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 * Config Client
 * Discovery Server
 * Alternatively use Consul as config server and discover server
+
+## Communication
+* inner communication
+* by rest template
+* by reactive webclient
+* by feign
+* timeout
+* load balancer
+* Circuit Breaker (resilience4j)
