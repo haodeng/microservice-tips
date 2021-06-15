@@ -5,6 +5,8 @@ spring:
 eureka:
   client:
     registryFetchIntervalSeconds: 1
+  instance:
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}}
 
 management:
   endpoints.web.exposure.include: '*'
