@@ -38,5 +38,19 @@ start post-service and client-feign-service, call:
     curl http://localhost:8080/client-feign/posts
     
 ## Load Balancer
+### Client side load balancer
+Ribbon has been deprecated. We should use recommended client-side-load-balancing approach from spring.io
+
+
+Enable load balancer to resttemplate and reactive webclient builder
+
+     @LoadBalanced
+
+Start 2 instances of post-service, try get posts 10 times:
+
+    curl http://localhost:8080/client/posts?fakevar=[1-10]
+
+Each post-service should be hit 5 times
+
 
 ## Circuit Breaker (resilience4j)
