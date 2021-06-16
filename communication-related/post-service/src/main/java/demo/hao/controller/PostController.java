@@ -24,6 +24,14 @@ public class PostController {
 
     @GetMapping
     public Collection<Post> getAllPosts() {
+        logger.info("get all posts");
+        return postRepository.findAll();
+    }
+
+    @GetMapping("/slow")
+    public Collection<Post> getAllPostsSlow() throws InterruptedException {
+        logger.info("get all posts, slow");
+        Thread.sleep(1000);
         return postRepository.findAll();
     }
 

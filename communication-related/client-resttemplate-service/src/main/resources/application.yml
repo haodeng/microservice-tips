@@ -1,6 +1,10 @@
 spring:
   application:
     name: client-resttemplate-service
+  cloud:
+    circuitbreaker:
+      resilience4j:
+        enabled: true
 
 eureka:
   client:

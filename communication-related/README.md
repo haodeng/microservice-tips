@@ -54,3 +54,44 @@ Each post-service should be hit 5 times
 
 
 ## Circuit Breaker (resilience4j)
+Spring Cloud Hystrix project is deprecate. resilience4j is recommended.
+
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-circuitbreaker-resilience4j</artifactId>
+    </dependency>
+
+Setup circuit breaker
+
+    @Bean
+    Customizer<Resilience4JCircuitBreakerFactory> defaultCustomizer() {
+        TimeLimiterConfig timeLimiterConfig = TimeLimiterConfig.custom()
+                .timeoutDuration(Duration.ofMillis(500))
+                .build();
+
+        CircuitBreakerConfig circuitBreakerConfig = CircuitBreakerConfig.custom()
+                .slidingWindowSize(10)
+                .failureRateThreshold(50F)
+                .slowCallRateThreshold(50F)
+                .build();
+
+        return factory -> factory.configureDefault(id -> new Resilience4JConfigBuilder(id)
+                .timeLimiterConfig(timeLimiterConfig)
+                .circuitBreakerConfig(circuitBreakerConfig)
+                .build());
+    }
+
+Enable circuit breaker in controller
+
+    @GetMapping("/posts/slow")
+    public Collection<Post> getAllPostsSlow() {
+        Resilience4JCircuitBreaker circuitBreaker = circuitBreakerFactory.create("random-circuit");
+        return circuitBreaker.run(() -> restTemplate.getForObject("http://post-service/posts/slow", Collection.class));
+    }
+
+Test
+
+    curl http://localhost:8080/client/posts/slow?fakevar=[1-20]
+
+First, it should get TimeLimiter 'random-circuit' recorded a timeout exception.
+After a while, CircuitBreaker 'random-circuit' is OPEN and does not permit further calls
