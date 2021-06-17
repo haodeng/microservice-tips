@@ -52,6 +52,9 @@ Start 2 instances of post-service, try get posts 10 times:
 
 Each post-service should be hit 5 times
 
+### Server side load balancer
+checkout api gateway
+
 
 ## Circuit Breaker (resilience4j)
 Spring Cloud Hystrix project is deprecate. resilience4j is recommended.
