@@ -22,5 +22,12 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 * by reactive webclient
 * by feign
 * timeout
-* load balancer
+* client side load balancer
 * Circuit Breaker (resilience4j)
+
+## Api Gateway
+* Setup api gateway (the single entry of services)
+* server side load balancer
+* RequestRateLimiter by Redis
+* gateway metric
+* Circuit Breaker for Api gateway

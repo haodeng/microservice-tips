@@ -17,4 +17,10 @@ public class ApiBController {
         return "api b";
     }
 
+    @GetMapping("/ping-slow")
+    public String pingSlow() throws InterruptedException {
+        logger.info("slow api b");
+        Thread.sleep(1000);
+        return "api b slow";
+    }
 }
