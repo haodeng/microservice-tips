@@ -31,3 +31,7 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 * RequestRateLimiter by Redis
 * gateway metric
 * Circuit Breaker for Api gateway
+
+## Spring cloud stream
+checkout: https://github.com/haodeng/spring-cloud-streams-demo
+
