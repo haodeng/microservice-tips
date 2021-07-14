@@ -35,3 +35,17 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 ## Spring cloud stream
 checkout: https://github.com/haodeng/spring-cloud-streams-demo
 
+
+# Some of micro service patterns
+* Externalized configuration
+* Service discovery and registration
+* Circuit Breaker
+* Database per service
+* API gateway
+* CQRS
+* Event sourcing
+* Log aggregation
+* Distributed tracing
+* Audit logging
+* Application metrics
+* Health check API
