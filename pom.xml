@@ -25,6 +25,7 @@
 		<module>config-and-service-discovery</module>
         <module>communication-related</module>
         <module>api-gateway</module>
+        <module>distributed-tracing</module>
     </modules>
 
 </project>

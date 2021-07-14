@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: tracing-service-two
+
+server.port: 0
+
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 3
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${random.value}}

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: tracing-service-one
+
+server.port: 0
+
+feign:
+  client:
+    config:
+      tracing-service-two:
+        readTimeout: 1000
+        connectTimeout: 1000
+        loggerLevel: full
+
+eureka:
+  client:
+    registryFetchIntervalSeconds: 1
+
+management:
+  endpoints.web.exposure.include: '*'
+  endpoint:
+    health:
+      show-details: always

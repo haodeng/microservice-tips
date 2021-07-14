@@ -32,6 +32,10 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 * gateway metric
 * Circuit Breaker for Api gateway
 
+## Distributed tracing
+* Zipkin server
+* Sleuth and Zipkin client
+
 ## Spring cloud stream
 checkout: https://github.com/haodeng/spring-cloud-streams-demo
 
