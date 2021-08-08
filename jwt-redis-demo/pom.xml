@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>microservice-tips</artifactId>
+        <groupId>demo.hao</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>jwt-redis-demo</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>auth-jwt-demo-service</module>
+<!--        <module>my-demo-service</module>-->
+    </modules>
+
+</project>

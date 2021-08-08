@@ -26,6 +26,7 @@
         <module>communication-related</module>
         <module>api-gateway</module>
         <module>distributed-tracing</module>
+        <module>jwt-redis-demo</module>
     </modules>
 
 </project>

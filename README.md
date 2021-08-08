@@ -39,6 +39,8 @@ For springboot and spring cloud version compatibility check: https://spring.io/p
 ## Spring cloud stream
 checkout: https://github.com/haodeng/spring-cloud-streams-demo
 
+## Auth
+* JWT with Redis
 
 # Some of micro service patterns
 * Externalized configuration

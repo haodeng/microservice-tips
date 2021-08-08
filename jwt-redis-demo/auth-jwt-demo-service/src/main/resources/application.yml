@@ -1,0 +1,10 @@
+jwt:
+  secret: JWTSecret
+  tokenHeader: Authorization
+  tokenPrefix: Bearer
+  # In seconds
+  expiration: 300
+  # In days
+  refreshTime: 7
+  # white list, no auth required
+  antMatchers: /login/**,/register/**,/static/**
