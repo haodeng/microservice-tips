@@ -76,11 +76,11 @@ Checkout: https://github.com/haodeng/microservice-centralize-log-elk-demo
             </configuration>
     </plugin>
     
-    mvn clean install spring-boot:run
+    mvn clean spring-boot:run
 
 Checkout info:
 
-    http://localhost:8080/actuator/info
+    curl http://localhost:8080/actuator/info
     
     {
       "git": {
@@ -98,8 +98,52 @@ Checkout info:
         "time": "2021-06-07T21:12:37.899Z"
       }
     }
-                
+
+## Include project info to health check
+Add these to application.properties
+
+    info.project.version: @project.version@
+    info.java.version: @java.version@
+    info.spring.framework.version: @spring-framework.version@
+    info.spring.data.version: @spring-data-bom.version@
+
+Test
+
+    curl http://localhost:8080/actuator/info   
+                   
+    {
+      "project": {
+        "version": "0.0.1-SNAPSHOT"
+      },
+      "java": {
+        "version": "11.0.11"
+      },
+      "spring": {
+        "framework": {
+          "version": "5.3.7"
+        },
+        "data": {
+          "version": "2021.0.1"
+        }
+      },
+      "git": {
+        "branch": "main",
+        "commit": {
+          "id": "6cffa6e",
+          "time": "2021-08-08T20:22:58Z"
+        }
+      },
+      "build": {
+        "artifact": "basic-tips",
+        "name": "basic-tips",
+        "time": "2021-08-14T17:41:40.528Z",
+        "version": "0.0.1-SNAPSHOT",
+        "group": "demo.hao"
+      }
+    }
+     
 ## Test
 Use TestRestTemplate
 
-    mvn clean install spring-boot:run
+    mvn clean spring-boot:run
+    
