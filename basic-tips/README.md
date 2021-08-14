@@ -107,6 +107,15 @@ Add these to application.properties
     info.spring.framework.version: @spring-framework.version@
     info.spring.data.version: @spring-data-bom.version@
 
+For yaml add:
+
+    info:
+      project.version: '@project.version@'
+      java.version: '@java.version@'
+      spring:
+        framework.version: '@spring-framework.version@'
+        data.version: '@spring-data-bom.version@'
+
 Test
 
     curl http://localhost:8080/actuator/info   
@@ -142,8 +151,27 @@ Test
       }
     }
      
-## Test
-Use TestRestTemplate
+## Thread dump and head dump
 
-    mvn clean spring-boot:run
+    # in json format
+    http://localhost:8080/actuator/threaddump
+    
+    # this will download a hprof file
+    http://localhost:8080/actuator/heapdump
+    
+
+## Trace http requests
+Add:
+
+        @Bean
+    	HttpTraceRepository traceRepository() {
+    	    // restart server will throw away all traces in memory
+    		return new InMemoryHttpTraceRepository();
+    	}
+
+    http://localhost:8080/actuator/httptrace
+
+The trace is on single service instance only, to use microservice distributed trace is recommended.
+    
+
     
